@@ -22,5 +22,9 @@ const reactionSchema = new mongoose.Schema({
 
 });
 
+reactionSchema.methods.formatTime = function () {
+    this.createdAt.toLocaleTimeString();
+}
+
 
 module.exports = Reaction;
