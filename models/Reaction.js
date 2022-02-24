@@ -29,4 +29,4 @@ function format(date) {
 }
 
 
-module.exports = reactionSchema;
+module.exports = Reaction;

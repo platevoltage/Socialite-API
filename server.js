@@ -1,5 +1,6 @@
 const express = require('express');
 const db = require('./config/connection');
+const routes = require('./routes');
 // Require model
 // const { xxx } = require('./models');
 
@@ -8,7 +9,7 @@ const app = express();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
+app.use(routes);
 
 
 

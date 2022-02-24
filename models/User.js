@@ -13,14 +13,14 @@ const userSchema = new mongoose.Schema({
         type: String, 
         required: true, 
         unique: true,
-        match: `/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/`
+        // match: `/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/`
     },
     thoughts: {
-        _id: [Thought]
+        // _id: [Thought]
         //array of _id values referencing Thought
     },
     friends: {
-        _id: [User]
+        // _id: [userSchema]
         //array of _id values referencing User (self)
     }
 
@@ -30,4 +30,4 @@ const userSchema = new mongoose.Schema({
 const User = mongoose.model('User', userSchema);
 
 
-module.exports = userSchema;
+module.exports = User;
