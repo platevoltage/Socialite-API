@@ -22,9 +22,11 @@ const reactionSchema = new mongoose.Schema({
     }
 
 });
+
+const Reaction = mongoose.model('Reaction', reactionSchema);
 function format(date) {
     return date.toLocaleTimeString();
 }
 
 
-module.exports = Reaction;
+module.exports = reactionSchema;

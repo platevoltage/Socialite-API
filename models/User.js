@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+const Thought = require('./Thought');
+
 
 const userSchema = new mongoose.Schema({
     username: { 
@@ -14,14 +16,18 @@ const userSchema = new mongoose.Schema({
         match: `/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/`
     },
     thoughts: {
+        _id: [Thought]
         //array of _id values referencing Thought
     },
     friends: {
+        _id: [User]
         //array of _id values referencing User (self)
     }
 
 
 });
 
+const User = mongoose.model('User', userSchema);
 
-module.exports = User;
+
+module.exports = userSchema;
