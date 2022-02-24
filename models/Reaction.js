@@ -17,13 +17,13 @@ const reactionSchema = new mongoose.Schema({
     createdAt: {
         type: Date,
         default: Date.now,
+        get: format
         //getter method to format timestamp
     }
 
 });
-
-reactionSchema.methods.formatTime = function () {
-    this.createdAt.toLocaleTimeString();
+function format(date) {
+    return date.toLocaleTimeString();
 }
 
 
