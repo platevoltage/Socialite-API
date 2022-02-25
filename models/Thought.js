@@ -18,10 +18,12 @@ const thoughtSchema = new mongoose.Schema({
         required: true
     },
     reactions: {
+        type: Array
         //array of nested documents created with the reactionSchema
     }
 },{ 
-    toJSON: { getters: true } 
+    toJSON: { getters: true },
+    id: false
 });
 
 const Thought = mongoose.model('Thought', thoughtSchema);

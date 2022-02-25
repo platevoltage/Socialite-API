@@ -22,7 +22,8 @@ const reactionSchema = new mongoose.Schema({
     }
 
 },{ 
-    toJSON: { getters: true } 
+    toJSON: { getters: true },
+    id: false 
 });
 
 const Reaction = mongoose.model('Reaction', reactionSchema);
