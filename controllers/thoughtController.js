@@ -17,6 +17,20 @@ module.exports = {
       )
       .catch((err) => res.status(500).json(err));
   },
+  updateThought(req, res) {
+    Thought.findOneAndUpdate(
+        { _id: req.params.thoughtId },
+        { $set: req.body }
+    )
+      // .select('')
+      // .populate('')
+      .then((thought) =>
+        !thought
+          ? res.status(404).json({ message: 'No thought with that ID' })
+          : res.json(thought)
+      )
+      .catch((err) => res.status(500).json(err));
+  },
   createThought(req, res) {
     Thought.create(req.body)
       .then((dbThoughtData) => res.json(dbThoughtData))
