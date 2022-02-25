@@ -21,11 +21,13 @@ const reactionSchema = new mongoose.Schema({
         //getter method to format timestamp
     }
 
+},{ 
+    toJSON: { getters: true } 
 });
 
 const Reaction = mongoose.model('Reaction', reactionSchema);
 function format(date) {
-    return date.toLocaleTimeString();
+    return `${date.toLocaleDateString()} at ${date.toLocaleTimeString()}`;
 }
 
 

@@ -10,6 +10,7 @@ const thoughtSchema = new mongoose.Schema({
     createdAt: {
         type: Date,
         default: Date.now,
+        get: format
         //getter method to format date
     },
     username: {
@@ -19,8 +20,13 @@ const thoughtSchema = new mongoose.Schema({
     reactions: {
         //array of nested documents created with the reactionSchema
     }
+},{ 
+    toJSON: { getters: true } 
 });
 
 const Thought = mongoose.model('Thought', thoughtSchema);
+function format(date) {
+    return `${date.toLocaleDateString()} at ${date.toLocaleTimeString()}`;
+}
 
 module.exports = Thought;
