@@ -22,8 +22,15 @@ const thoughtSchema = new mongoose.Schema({
         //array of nested documents created with the reactionSchema
     }
 },{ 
-    toJSON: { getters: true },
+    toJSON: { 
+        getters: true,
+        virtuals: true 
+    },
     id: false
+});
+
+thoughtSchema.virtual('reaction count').get(function () {
+      return this.reactions.length;
 });
 
 const Thought = mongoose.model('Thought', thoughtSchema);
