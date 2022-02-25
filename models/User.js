@@ -24,6 +24,7 @@ const userSchema = new mongoose.Schema({
     
     friends: {
         type: Array,
+        ref: 'User'
         // _id: [userSchema]
         //array of _id values referencing User (self)
     }
