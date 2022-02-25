@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+
+
 const reactionSchema = new mongoose.Schema({
     reactionId: {
         type: mongoose.Types.ObjectId,
@@ -19,7 +21,14 @@ const reactionSchema = new mongoose.Schema({
         default: Date.now,
         get: format
     }
+},{ 
+    toJSON: { 
+        getters: true,
+    },
+    id: false
 });
+
+
 
 const thoughtSchema = new mongoose.Schema({
     thoughtText: {
@@ -56,8 +65,6 @@ thoughtSchema.virtual('reaction count').get(function () {
 });
 
 const Thought = mongoose.model('Thought', thoughtSchema);
-function format(date) {
-    return `${date.toLocaleDateString()} at ${date.toLocaleTimeString()}`;
-}
+
 
 module.exports = Thought;
