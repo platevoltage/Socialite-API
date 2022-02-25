@@ -13,20 +13,17 @@ const userSchema = new mongoose.Schema({
         type: String, 
         required: true, 
         unique: true,
-        // match: `/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/`
+        match: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
     },
     thoughts: {
         type: Array,
         ref: 'Thought'
 
     },
-        //array of _id values referencing Thought
-    
     friends: {
         type: Array,
         ref: 'User'
-        // _id: [userSchema]
-        //array of _id values referencing User (self)
+
     }
 
 
