@@ -20,10 +20,11 @@ This is a backend for a social media site called Socialite. It Express.js to ser
 
 ```
 
-## [Watch the demo video](https://antieatingactivist.github.io/E-Commercify/)
+## [Watch the demo video](https://antieatingactivist.github.io/Socialite-API/)
 
 
-<img width="993" alt="Screen Shot 2022-02-07 at 7 06 53 PM" src="https://user-images.githubusercontent.com/1414728/152910543-64455abd-a58a-428b-a835-8cb878e1467e.png">
+
+<img width="1065" alt="Screen Shot 2022-02-25 at 9 01 35 PM" src="https://user-images.githubusercontent.com/1414728/155829871-4a15aeca-8933-4c19-ac8a-3281127fc7d7.png">
 
 
 
